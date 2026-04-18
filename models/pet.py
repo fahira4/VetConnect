@@ -11,5 +11,4 @@ class Pet(Base):
     breed = Column(String)   
     owner_name = Column(String) 
 
-    # Relasi One-to-Many ke MedicalRecord
     records = relationship("MedicalRecord", back_populates="pet")

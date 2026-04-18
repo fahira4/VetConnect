@@ -11,12 +11,10 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         
-        /* Custom Scrollbar */
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         
-        /* Animasi Blob Lembut */
         @keyframes blob {
             0% { transform: translate(0px, 0px) scale(1); }
             33% { transform: translate(30px, -50px) scale(1.1); }
@@ -27,7 +25,6 @@
         .animation-delay-2000 { animation-delay: 2s; }
         .animation-delay-4000 { animation-delay: 4s; }
 
-        /* Filter Aktif */
         .filter-active { background-color: #4f46e5 !important; color: white !important; border-color: #4f46e5 !important; }
     </style>
 </head>
@@ -187,10 +184,7 @@
         let currentCategory = 'all';
 
         function setFilter(category, btnElement) {
-            // Ubah kategori aktif
             currentCategory = category;
-            
-            // Atur gaya tombol agar yang dipilih berwarna ungu
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('filter-active', 'bg-white', 'text-indigo-600', 'border-indigo-200');
                 btn.classList.add('bg-white/60', 'text-slate-600', 'border-slate-200');
@@ -208,8 +202,6 @@
             cards.forEach(card => {
                 let name = card.getAttribute('data-name');
                 let species = card.getAttribute('data-species');
-                
-                // Cek apakah cocok dengan pencarian DAN kategori
                 let matchesSearch = name.includes(input);
                 let matchesCategory = (currentCategory === 'all') || (species === currentCategory);
                 

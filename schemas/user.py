@@ -7,7 +7,6 @@ class UserCreate(BaseModel):
 class UserResponse(BaseModel):
     id: int
     username: str
-    # Perhatikan: Kita TIDAK mengembalikan password di Response demi keamanan!
-
+    
     class Config:
         from_attributes = True
